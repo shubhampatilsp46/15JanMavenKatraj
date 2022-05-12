@@ -1,12 +1,7 @@
 package testjava;
 
 import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
 import org.testng.Assert;
-import org.testng.annotations.Test;
 
 
 public class LoginPageTest extends BaseTest {
@@ -15,18 +10,18 @@ public class LoginPageTest extends BaseTest {
 	public void verifyLoginFunctionality() {
 		login.loginMethod("Admin","admin123");
 		boolean verifyLoginIsSuccessful = dashboardPage.titleOfPage();
-		AssertJUnit.assertEquals(verifyLoginIsSuccessful, true);
+		Assert.assertEquals(verifyLoginIsSuccessful, true);
 	}
 	
 	@Test(priority=0)
 	public void verifyTitleOfPage() {
 		boolean titlePageIsVerified = login.titleOfLoginPage();
-		AssertJUnit.assertEquals(titlePageIsVerified, true);
+		Assert.assertEquals(titlePageIsVerified, true);
 	}
 	
 	@Test(priority=-1)
 	public void verifyUrlOfPage() {
 		boolean urlOfWebPageIsVerfied = login.urlOfLoginPage();
-		AssertJUnit.assertEquals(urlOfWebPageIsVerfied, true);
+		Assert.assertEquals(urlOfWebPageIsVerfied, true);
 	}
 }
