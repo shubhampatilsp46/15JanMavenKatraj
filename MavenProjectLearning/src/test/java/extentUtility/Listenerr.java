@@ -1,4 +1,4 @@
-package extentlistener;
+package extentUtility;
 
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -10,10 +10,8 @@ import com.aventstack.extentreports.Status;
 
 import testjava.BaseTest;
 
-
-public class Listenerr extends BaseTest implements ITestListener{
-	
-	ExtentReports extent = HtmlReportt.extentReportGenerator();
+public class Listenerr extends BaseTest implements ITestListener {
+	ExtentReports extent = CustomReportersss.extentReporterGenrator();
 	ExtentTest test;
 
 	@Override
@@ -25,18 +23,13 @@ public class Listenerr extends BaseTest implements ITestListener{
 	@Override
 	public void onTestSuccess(ITestResult result) {
 		// TODO Auto-generated method stub
-		test.log(Status.PASS, "Test Is Pass");
-//		test.log(Status.FAIL, "Test Is Fail");
+		test.log(Status.PASS, "Test is Passed");
 	}
-
-
 
 	@Override
 	public void onFinish(ITestContext context) {
 		// TODO Auto-generated method stub
 		extent.flush();
 	}
-	
-	
 
 }
